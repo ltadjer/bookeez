@@ -6,6 +6,7 @@
 		"build": "storybook build",
 		"dev": "storybook dev --port 6006 --host 0.0.0.0 --no-open",
 		"format": "prettier --write .",
+		"icons": "node --experimental-strip-types bin/generate_icon_names.ts && prettier --write src/types/icon.ts src/components/atoms/icon/names.ts",
 		"lint": "eslint --fix .",
 		"ncu": "ncu -iu",
 		"storybook": "storybook"
@@ -38,6 +39,7 @@
 		"@storybook/test": "^8.5.2",
 		"@tailwindcss/vite": "^4.0.0",
 		"@tanstack/react-router": "^1.98.0",
+		"@types/node": "^22.10.5",
 		"@types/react": "^19.0.8",
 		"@types/react-dom": "^19.0.3",
 		"@typescript-eslint/parser": "^8.21.0",
