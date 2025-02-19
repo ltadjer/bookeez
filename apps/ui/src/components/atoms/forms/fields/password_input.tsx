@@ -1,13 +1,14 @@
 import type { ValidationError } from '@tanstack/react-form';
 
-import { ToggleButton } from '~/components/atoms/button';
-import { Description } from '~/components/atoms/forms/description';
-import { Errors } from '~/components/atoms/forms/errors';
-import { Label } from '~/components/atoms/forms/label';
-import { Icon } from '~/components/atoms/icon';
-import { cw } from '~/utils/style';
 import { type ReactNode, useState } from 'react';
 import { Input, TextField, type TextFieldProps } from 'react-aria-components';
+
+import { cw } from '../../../../utils/style.js';
+import { ToggleButton } from '../../button/toggle_button.js';
+import { Icon } from '../../icon/icon.js';
+import { Description } from '../description.js';
+import { Errors } from '../errors.js';
+import { Label } from '../label.js';
 
 export interface PasswordInputProps extends Omit<TextFieldProps, 'type'> {
 	label: ReactNode;
@@ -54,9 +55,9 @@ export function PasswordInput(props: Readonly<PasswordInputProps>) {
 					onChange={() => {
 						togglePassword((v) => !v);
 					}}
+					size="sm"
 					tooltip={showPassword ? 'Cacher le mot de passe' : 'Afficher le mot de passe'}
 					variant="ghost"
-					className="my-1"
 				/>
 				{isInvalid && <Icon name="triangle-alert" className={cw('text-danger-500 ml-2')} />}
 			</div>
